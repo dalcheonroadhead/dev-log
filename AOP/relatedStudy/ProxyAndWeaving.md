@@ -34,7 +34,8 @@ Proxy는 Runtime weaving을 구현할 경우, 구현의 핵심이 되는 개념�
 proxy의 사전적 의미는 대리인 이다. Spring AOP에서 proxy 라는 개념 또한 이 사전적 의미를 그대로 따라가는데, 원 객체(real Object)를 대신하여 일을 처리하는 객체라는 의미이다.  
   만약 Service 객체 A의 Proxy를  *Z*라고 가정해보자. 만약 클라이언트가 서비스 로직 A에게 요청을 보낸 경우,  그것의 대리인 *Z*가 자신이 A인척 클라이언트를 속여서 요청을 대신 받는다.  그리고 전처리 부가기능을 수행하고 본 객체를 자신의 내부에서 호출하여 본 기능을 수행한다. 그 후 후처리 부가기능을 수행한다. 
 
-![image-20240310231417040](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240310231417040.png)
+![image](https://github.com/dalcheonroadhead/Spring-framework-theory/assets/102154788/dd308b3e-7bec-4788-ba98-ae7cdaa5fe55)
+
 
 > 위의 그림으로 설명했지만, Proxy 객체를 이용한 RTW를 글로 설명해보자면
 
