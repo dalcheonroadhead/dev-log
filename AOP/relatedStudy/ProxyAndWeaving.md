@@ -52,3 +52,5 @@ proxy의 사전적 의미는 대리인 이다. Spring AOP에서 proxy 라는 개
 ### 참고문헌
 
 >[AOP_Proxy](https://dahye-jeong.gitbook.io/spring/spring/2020-04-09-aop-proxy) 
+>
+>[AOP의 기본 개념과 Spring에서의 적용방법](https://velog.io/@youjung/Spring-AOP) 
