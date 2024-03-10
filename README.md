@@ -15,6 +15,4 @@
 | 원본 문서 링크                                               | 번역 내용                                                    | 해당 내용에 대한 정리 | 작성 일자  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------------------- | ---------- |
 | [AOP의 발상](https://docs.spring.io/spring-framework/reference/core/aop/introduction-defn.html) | [AOP의 발상 번역](https://github.com/dalcheonroadhead/Spring-framework-theory/blob/main/AOP/AOP_Concepts.md) |                       | 2024-03-09 |
-|                                                              |                                                              |                       |            |
-|                                                              |                                                              |                       |            |
 
