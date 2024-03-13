@@ -9,7 +9,8 @@
 자세한 내용은 [[01] -OAuth2 이론 정리](https://dalcheonroadhead.tistory.com/381)에 정리해두었으니 OAuth2 흐름이 궁금하다면 해당 글을 보면 될 것 같다.  
 이번 글에서는 Google 로그인을 구현한 프로젝트를 클론코딩하고, 흐름에 맞게 설명할려고 한다. 그러면 저번 글에서 사용했던 OAuth2 흐름에 따라 설명하겠다. 
 
-![image-20240312214420781](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240312214420781.png)
+![image-20240312214420781](https://github.com/dalcheonroadhead/Theory-study/assets/102154788/98ca550a-02bf-4490-aa80-6129dc04450e)
+
 
 ## 2. (1)~(4)의 과정 
 
@@ -23,14 +24,16 @@
 
 -> 해당 주소는 Google Authorization Server의 로그인 검증 페이지 주소이다. 해당 주소에서 CLIENT_ID와 REDIRECT_URI를 자신이 할당받은 것으로 바꾸면 사용가능 하다.
 (1)에서 (2)번까지의 과정을 그림으로 표현하면, 
-![image-20240312220113625](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240312220113625.png)
+![image-20240312220113625](https://github.com/dalcheonroadhead/Theory-study/assets/102154788/75b64a59-2fa9-4c48-a8ea-8112ddb68d34)
+
 
 사용자의 화면은 구글 인증 서버에서 제공하는 로그인 페이지로 이동할 것이다. 자, 이제 사용자가 자기 계정 중 하나를 선택했다고 가정 해보자. 그러면
 **(4) Resource Owner의 ID/PW 제공** 까지 된 것이다. 
 
 구글로 예를 들 때, Resource Owner가 저기 계정 중 하나를 골라 클릭하면 구글은 Authroization Code를 Client APP이 자신들에게 등록한 RedirectURL (클라이언트 앱으로의 주소)로 보내준다. 나는 다음과 같이 설정했다. 
 
-![image-20240312221154840](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240312221154840.png)
+![image-20240312221154840](https://github.com/dalcheonroadhead/Theory-study/assets/102154788/e823706b-9371-4cb8-8f91-cafda0306c5e)
+
 
 ## 3. (5) ~(8) 인가코드로 구글 인증 서버에서 Access Token 받기 
 
@@ -137,8 +140,10 @@ registrationId는 확장성을 위해서 pathVariable로 달리 할 수 있게 �
 **☆ MultiValueMap 이란?**
 
 MultiValueMap은 Spring에서 제공하는 API이다. 그 안을 들여다보면, 
+![image-20240313002153132](https://github.com/dalcheonroadhead/Theory-study/assets/102154788/9547bb24-7c6f-4d0e-a20e-e9c6d53fa192)
 
-![image-20240313002153132](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240313002153132.png)![image-20240313002425471](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240313002425471.png)
+![image-20240313002425471](https://github.com/dalcheonroadhead/Theory-study/assets/102154788/66d6277c-58cc-41e5-b8f1-40b0be392290)
+
 
 Map을 확장한 형태인데, Value 부분이 List로 이루어진 것을 알 수 있다. 해당 자료구조는 값을 넣는 명령어가 'put'이 아닌 'add' 인 지점에서도 List를 가지고 있음을 알 수 있다.  MultiValueMap는 하나의 Key가 여러개의 Value를 List 형태로 가질 수 있다. 예시 코드는 다음과 같다. 
 ```java
