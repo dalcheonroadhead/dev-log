@@ -10,16 +10,18 @@
 ## 1. JWT란 무엇인가? 
 
 기본적인 토큰 인증 방식을 따르고, 거기서 토큰 자체를 강화한 방식이라 생각하면 된다. 원래의 토큰 인증 기반에서 요청자가 보내온 ID/PW 가 DB에 존재하면 (우리 회원이 맞으면) 그 요청자에게 자신들의 API를 쓸 수 있는 허가증인 토큰을 전해줬었다. 
-![image-20240313213753190](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240313213753190.png)
+![image-20240313213753190](https://github.com/dalcheonroadhead/Theory-study/assets/102154788/8f5bc05b-12dd-4645-92ca-455dc644c652)
+![image-20240313213805761](https://github.com/dalcheonroadhead/Theory-study/assets/102154788/5a9c3cd7-fc70-496d-b09d-fbd2ff823599)
 
-![image-20240313213805761](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240313213805761.png)
+
 
 여기서 더해 JWT의 경우 토큰을 만들 때, 사용자의 정보(간단한 개인정보 등 +@)를  암호화하여 만든다. (암호화에는 BASE64 URL-safe Encode를 쓴다. )  거기에 더해 해당 토큰이 위변조 될 것을 대비해 전자 서명까지 인코딩된 정보 뒤에 붙여 넣는다. (자세한 구조는 후술하겠다.) 이렇게 되면 무엇이 좋을까? 아까 토큰 자체가 사용자에 대한 개인정보라고 하였다. 따라서 해당 인증 절차 이후 사용자가 Header에 JWT를 넣어 API 요청을 하는 경우를 고려해보자. 자신의 개인정보에 관한 간단한 요청일 경우, 서버에서 JWT 자체를 서버의 Key로 디코딩 하여 원하는 정보를 꺼내 다시 반환 할 수 있다. (DB를 안가도 된다.) 자세한 장점 또한 뒤에서 더 말하겠다 . 
 일단 JWT의 구조를 한번 보자. 
 
 ## 2. JWT의 구조는 어떻게 되는가? 
+![image-20240313215406199](https://github.com/dalcheonroadhead/Theory-study/assets/102154788/e2d04d32-248f-4086-8f1d-5f8a3999bba3)
 
-![image-20240313215406199](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240313215406199.png)
+
 
 하나씩 살펴보자! 
 
@@ -37,8 +39,9 @@
   
 
  ## 3. JWT를 이용한 토큰 인증 방식의 과정
+![image-20240313221626069](https://github.com/dalcheonroadhead/Theory-study/assets/102154788/80ce08b1-d43b-46f3-8e12-765f717b1007)
 
-![image-20240313221336573](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240313221336573.png)
+
 
 기존 토큰 인증 방식과 큰 틀은 똑같다. 클라이언트가 요청을 보내고, 진짜 우리 회원인지 확인 후 맞으면 토큰을 보낸다. 다만 이 때 보내는 토큰이 Access Token(이하 AT), Refresh Token(이하 RT)로 두 개이다. AT는 우리가 쓰던 그대로 Server에 API 요청을 하기 위해 쓰인다. RT는 언제 쓰일까? 
 
@@ -46,7 +49,8 @@
   그러면 우리의 선량한 사용자도 AT 수명이 다 할때마다 원래의 로그인 절차를 다시 밟아야 하는가? 현재 많은 서비스의 AT 수명은 한 시간인데, 이렇다면 우리는 코테 문제를 풀다가 한 시간이 지나버렸을 경우, 제출버튼을 눌렀는데, 로그인 창으로 가버려서 코딩 내역을 다 날려버릴 것이다! 
   또 이 짧은 AT의 수명에 대한 대안점으로 RT가 등장하였다. RT 또한 JWT 토큰인데, 오직 AT를 재발급 하는 용도로만 쓴다. RT의 경우 사용자 정보와 같이 DB에 저장하는 경우가 많다. 따라서 사용자가 RT를 통해 재발급 요청을 하면, Server는 해당 사용자 레코드에 적힌 RT와 대조하여 일치하면 AT를 다시 제공해준다. 이렇게 RT는 AT가 만료된 경우에만 요청에 등장하기 때문에 간헐적이라 탈취가 쉽지 않을 것이다. RT의 평균 수명은 한달 ~ 두달 정도로 넉넉하다. 
 
-![image-20240313221640737](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240313221640737.png)
+![image-20240313221640737](https://github.com/dalcheonroadhead/Theory-study/assets/102154788/5da48d26-6890-4c95-ad3a-4722ae8e2a4c)
+
 
 ## 4. JWT 토큰 인증 방식이 신뢰성을 가지는 이유 
 
