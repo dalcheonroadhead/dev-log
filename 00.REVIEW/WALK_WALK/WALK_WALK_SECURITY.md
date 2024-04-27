@@ -7,7 +7,8 @@
 
 # 2. 전개도 
 
-![image-20240425093453098](C:\Users\SSAFY\AppData\Roaming\Typora\typora-user-images\image-20240425093453098.png)
+![image-20240425093453098](https://github.com/dalcheonroadhead/What-I-Study/assets/102154788/8f17368c-e4b8-49d0-aab5-9774e82bbc7d)
+
 
 # 3. 코드 분석
 
