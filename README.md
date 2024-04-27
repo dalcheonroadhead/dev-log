@@ -29,4 +29,8 @@
 | 5    | <img alt="Static Badge" src="https://img.shields.io/badge/REVIEW-ff00aa"> | [시큐리티 없는 GoogleOAuth2 실습 정리]()                     | 2024-03-13 |
 | 6    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [토큰 인증 방식](https://github.com/dalcheonroadhead/Theory-study/blob/main/02.SECURITY/1.JWT/02_Token-authentication.md) | 2024-03-15 |
 | 7    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [JWT란 무엇인가?](https://github.com/dalcheonroadhead/Theory-study/blob/main/02.SECURITY/1.JWT/01_AboutJWT.md) | 2024-03-17 |
+| 8    | <img alt="Static Badge" src="https://img.shields.io/badge/REVIEW-ff00aa"> | [SSAFY 특화 프로젝트 Security 파트 리뷰](https://github.com/dalcheonroadhead/What-I-Study/blob/main/00.REVIEW/WALK_WALK/WALK_WALK_SECURITY.md) | 2024-04-26 |
+| 9    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [개발자 유미 SecurityJWT 14강 듣고 정리](https://github.com/dalcheonroadhead/What-I-Study/tree/main/02.SECURITY/3.Security-with-JWT-Review) | 2024-04-27 |
+
+
 
