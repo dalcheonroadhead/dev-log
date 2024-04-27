@@ -1,37 +1,32 @@
-# Spring-framework-theory
-> 공식 문서를 보지 않고 블로그로 공부하는 것은, 음식을 만든 요리사가 아닌 음식을 먹어본 사람에게 요리를 배우는 것과 같다.
+### ⌨️ 규칙
 
-라는 말이 와닿았습니다. <br>
-그래서 공식문서 힘 닿는 데까지 번역 해보고, 거기서 모르는 내용들을 찾아서 공부해볼 예정입니다. 
+1. 이해하고 싶은 개념을 정해서 ``ISSUE``에 적어넣는다. 
 
-### 📜INFO
+2. 해당 내용에 대해 공부해서 어떻게든 ``스스로 설명할 수 있도록`` 만든다. 
 
-1. 주인장이 직접 하는 번역이라, 틀린 부분이 많을 겁니다. 이상한 부분은 Issue -> Question으로 적어주시면 겸허히 받아들이겠습니다. 
+3. 해당 개념을 설명하는 ``강의용 스크립트``를 만든다. 
 
-2. 제가 현재 공부할 때 필요한 문서 위주로 읽을 거라서 정리 순서는 뒤죽박죽일 수 있습니다. 그러나 정리한 내용은 카테고리 별로 분류하여 넣어놓을테니, 한번 봐주세요. 
+4. 모르겠는 부분은 다시 공부한다. 
 
-3. ( )로 표현된 것은 제가 번역을 하며 단 주석입니다. [ ]는 글 속에 존재하는 예시입니다. 
+5. 각 공부의 내용은 Label로 구분한다. Label의 이름과 성격은 다음과 같다.
 
-4. 정리 타입 
+   | 이름                                                         | 성격                                         |
+   | ------------------------------------------------------------ | -------------------------------------------- |
+   | <img alt="Static Badge" src="https://img.shields.io/badge/TRANSLATION-00aaff"> | 공식 문서 번역                               |
+   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | 모르는 내용에 대한 학습                      |
+   | <img alt="Static Badge" src="https://img.shields.io/badge/Review-ff00aa"> | 프로젝트 실습에 대한 해설 (코드 한 톨 한 톨) |
 
-   ```json
-   {
-       
-       translation: 	"번역",
-       checking: 		"공부한 내용 잘 알고 있나 확인",
-       drilling:		"모르는 거 깊게 파고 들기",
-       review:			"클론코딩 한 내용에 대한 설명 (모르는 내용들 찾아보고 필요한 데까지만 공부)"
-   }
-   ```
 
-5. **현재 정리하려는 TOPIC을 누군가에게 설명한다는 생각으로 정리해서 올리자! DOCS를 만든다는 생각!**
 
-## 📜Content
+### 💻 What I type up
 
-| #    | 타입        | 공부한 내용                                                  | 작성 일자  |
-| ---- | ----------- | ------------------------------------------------------------ | ---------- |
-| 1    | translation | [AOP의 발상 번역](https://github.com/dalcheonroadhead/Spring-framework-theory/blob/main/AOP/AOP_Concepts.md) | 2024-03-09 |
-| 2    | checking    | [AOP의 발상 키워드만 보고 정리](https://github.com/dalcheonroadhead/Spring-framework-theory/blob/main/AOP/relatedStudy/conceptOfAOP.md) | 2024-03-10 |
-| 3    | drilling    | [Weaving과Proxy에 대하여](https://github.com/dalcheonroadhead/Spring-framework-theory/blob/main/AOP/relatedStudy/ProxyAndWeaving.md) | 2024-03-11 |
-| 4    | checking    | [Security없는 구글 OAuth2 로그인](https://github.com/dalcheonroadhead/Theory-study/blob/main/Spring-security/OAuth2WithoutSecurity.md) | 2024-03-13 |
+| #    | TYPE                                                         | CONTENT                                                      | DATE       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
+| 1    | <img alt="Static Badge" src="https://img.shields.io/badge/TRANSLATION-00aaff"> | [AOP의 발상](https://github.com/dalcheonroadhead/Theory-study/blob/main/AOP/AOP_Concepts.md) | 2024-03-09 |
+| 2    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [AOP의 개념](https://github.com/dalcheonroadhead/Theory-study/blob/main/AOP/related-study/conceptOfAOP.md) | 2024-03-10 |
+| 3    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [Weaving과 Proxy에 대하여]()                                 | 2024-03-11 |
+| 4    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [OAtuh2의 이론](https://dalcheonroadhead.tistory.com/381)    | 2024-03-03 |
+| 5    | <img alt="Static Badge" src="https://img.shields.io/badge/Review-ff00aa"> | [시큐리티 없는 GoogleOAuth2 실습 정리]()                     | 2024-03-13 |
+| 6    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [토큰 인증 방식]()                                           | 2024-03-15 |
+| 7    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [JWT란 무엇인가?]()                                          | 2024-03-17 |
 
