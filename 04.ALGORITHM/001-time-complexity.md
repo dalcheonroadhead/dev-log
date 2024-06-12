@@ -30,7 +30,8 @@
 
 ## (3) Big-O 표기법 연산 횟수의 유형
 
-![image-20240613020852245](C:\Users\JeonSooMin\AppData\Roaming\Typora\typora-user-images\image-20240613020852245.png)
+![image-20240613020852245](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/2763980f-770b-4e9c-9cb2-d6a5fdad93a5)
+
 
 위의 표는 주어진 데이터 크기(N)에 따라 필요한 Big-O 표기로 나타낸 연산 횟수이다.
 
