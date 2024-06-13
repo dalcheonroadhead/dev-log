@@ -16,6 +16,7 @@ Before(R,C) 는 원래 행렬에서의 원소의 위치를 말하는 것이고, 
 Before(), After()는 위에 설명한 그대로이다. 
 
 # 3. 배열 시계 방향 혹은 반 시계 방향으로 원소를 한 칸씩 이동 
+![KakaoTalk_20240614_024319206](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/57468324-e7dc-4eee-9cee-192372e6ad09)
 
 idx, idy를 이용하여, 한 칸씩 이동. 
 
