@@ -4,7 +4,8 @@
 
 # 1. Array
 
-![image-20240622202928470](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240622202928470.png)
+![image-20240622202928470](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/8b4c62f5-4bdc-4350-8ed3-c3e44b22f2bc)
+
 
 ## (1) 정의 
 
@@ -92,7 +93,8 @@ Arrays.sort(array, new Comparator<Integer>() {
 
 # 2. LinkedList
 
-![image-20240622203908325](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240622203908325.png)
+![image-20240622203908325](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/6f5d23c8-3e45-4f5b-9c79-3b75f9eea60b)
+
 
 ## (1) 정의
 
@@ -130,7 +132,8 @@ Node가 아닌 Array를 사용하여 구현한 List 자료구조 → 따라서 A
 데이터를 저장할 때, Key, Value 쌍으로 저장하는 자료구조 
 Key를 락커룸 키, value를 락커룸 속에 저장된 물건이라 생각하자. 라커룸에서 물건을 꺼내려면, 해당 락커의 키가 있어야 한다. 마찬가지로 내가 저장한 value를 꺼내기 위해서는 그 value가 저장된 key를 알고 있어야 한다. 
 
-![image-20240622220118607](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240622220118607.png)
+![image-20240622220118607](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/3da1f8a9-868c-4daf-ae63-c99504bd92f7)
+
 
 ## (2) 특징
 
