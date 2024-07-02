@@ -14,7 +14,7 @@
 이런 식으로 정렬하게 되면 배열 혹은 리스트의 오른쪽부터 값들이 정렬되어 쌓이게 된다. 
 예시 
 
-![image-20240702231728741](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240702231728741.png)
+![image-20240702231728741](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/3ea8a74c-90d7-4010-b0de-18fcd8a1f56a)
 
 사진 출처: [블로그](https://blog.naver.com/justant/20204028286)
 
@@ -35,7 +35,8 @@ $$
 
  밑의 사진은 오름차순 정렬을 선택 정렬로 행한 것이고, 최소값을 오른쪽으로 몰아넣었다.
 
-![image-20240702232021586](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240702232021586.png)
+
+![image-20240702232021586](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/fed36772-76db-40f6-adb3-67238fa4bf85)
 
 사진 출처: [블로그](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=jsky10503&logNo=221249976761)
 
@@ -53,7 +54,8 @@ $$
 - 삽입할 위치에 현재 값을 삽입한다. (정렬된 영역이 +1 증가한다.)
 - 정렬되지 않은 영역의 값을 가지고 위의 과정을 반복한다.
 
-![image-20240702232449866](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240702232449866.png)
+![image-20240702232501005](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/565ca445-9fcf-45c7-aa2d-53db755ffadf)
+
 
 사진 출처: [블로그](https://m.blog.naver.com/PostView.nhn?blogId=justant&logNo=20204025251&proxyReferer=https:%2F%2Fwww.google.com%2F)
 
