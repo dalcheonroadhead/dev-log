@@ -232,5 +232,96 @@ map.forEach((k, v) -> System.out.println(k + " : " + v));
 
 
 
+# 4. Stack
 
+## (1) 정의 
+
+**후입선출(Last In First Out) 구조** : 맨 마지막에 들어간 놈이 제일 먼저 나온다.
+
+| ![image-20240704201726694](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704201726694.png) | ![image-20240704201741540](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704201741540.png) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+
+출처: 농심, [블로그](https://hstory0208.tistory.com/entry/Java%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%83%9DStack%EA%B3%BC-%ED%81%90Queue)
+
+## (2) 빈출 매소드
+
+| 이름                                 | 설명                                                         |
+| ------------------------------------ | ------------------------------------------------------------ |
+| boolean empty() \| boolean isEmpty() | Stack 이 비어있는지 알려줌.                                  |
+| Object peek()                        | Stack 맨 위에 저장된 객체를 반환<br />(Stack이 비어있다면, EmptyStackException 발생) |
+| Object pop()                         | Stack 맨 위에 저장된 객체를 꺼낸다. <br />(Stack이 비어있다면, EmptyStackException 발생) |
+| Object push(Object item)             | Stack에 객체(item)를 저장한다.                               |
+| int search(Object o)                 | Stack에 주어진 객체(o)를 찾아서 그 위치 index를 반환한다.<br />못찾으면 -1을 반환한다.<br />(배열과 달리 stack의 위치는 1부터 시작함!) |
+
+## (3) 배열로 구현
+
+![image-20240704202544020](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704202544020.png)
+
+출처: [블로그](https://imtaeheewon.tistory.com/24)
+
+사진 처럼 Top이란 포인터를 두어서 Push, Pop 이벤트 발생 시 Top 포인터를 올리거나 내린다.
+주의점: 배열은 크기가 고정되어 있기 때문에 배열로 Stack 구현 시 이 점을 유의해야 한다.
+
+# 5. Queue 
+
+## (1) 정의 
+
+선입선출(First In First Out) 구조: 먼저 들어간 놈이 먼저 나온다.
+값은 꼬리(rear)로 입력되고, 입력된 순서대로 머리(Front)로 나온다. Queue에서는 값의 값이 입력되는 곳과 출력되는 곳이 정해져 있다.
+
+| ![image-20240704202931378](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704202931378.png) | ![image-20240704203038272](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704203038272.png) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+
+출처: [블로그](https://blog.naver.com/beaqon/221247518381) , [블로그](https://velog.io/@hanif/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%ED%81%90)
+
+## (2) Deque
+
+### a. 정의
+
+Front, rear 둘 중 어느 방향으로도 값의 삽입과 출력이 가능한 양방향 큐 
+
+![image-20240704203825784](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704203825784.png)
+
+### b. 빈출 매소드
+
+| 이름                  | 설명                                                  |
+| --------------------- | ----------------------------------------------------- |
+| add()  \| addLast()   | rear에  원소 삽입 (rear: queue에서 값이 입력되던 곳)  |
+| addFirst()            | front에 원소 삽입 (front: queue에서 값이 출력되던 곳) |
+| poll() \| pollFirst() | front에서 원소 출력 및 반환                           |
+| pollLast()            | rear에서 원소 출력 및 반환                            |
+| getFirst() \| peek()  | front에 있는 원소를 반환                              |
+| getLast()             | rear에 있는 원소 반환                                 |
+
+## (3) Priority Queue (우선순위 큐)
+
+### a. 정의
+
+들어온 순서대로 나가지 않는다. 큐 안에서의 정렬방식을 정하고, 그 기준에 맞게 정렬된 값 중 맨 앞에 있는 값이 먼저 나간다.
+
+### b. 유형
+
+```java
+// 1. 기본형: 오름차순
+PriorityQueue<Integer> pQ = new PriorityQueue<>();
+ 
+// 2. 기본형: 내림차순
+PriorityQueue<Integer> pQ = new PriorityQueue<>(Collections.reverseOrder());
+
+// 3. 변형: 객체 비교 
+// 만약 기본 자료형이 아닌 객체를 정렬하려면? 
+// 객체간의 대소관계를 측정하는 방법을 우선순위 큐에게 알려줘야 한다. -> 이를 위해 인수로 Comparator 객체를 넣는다.
+PriorityQueue<Student> pQ = new PriorityQueue<>(new Comparator<Student>() {
+    
+    // 학생 객체의 수학 점수로 정렬
+    @Override
+    public int compare(Student o1, Student o2){
+        return o1.math - o2.math;
+    }
+});
+    
+// 4. 람다식으로 단순화
+PriorityQueue<Student> pQ = new ProrityQueue<Student>((o1,o2) -> Integer.compare(o1,math, o2,math));
+
+```
 
