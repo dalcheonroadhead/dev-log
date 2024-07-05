@@ -86,4 +86,5 @@ $$
 
 ### (2) 예시
 
-![image-20240705230217430](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240705230217430.png)
+![image-20240705230217430](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/caaef305-500b-46e7-9edf-f21385f0891f)
+
