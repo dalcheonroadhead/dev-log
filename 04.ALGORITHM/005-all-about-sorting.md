@@ -65,3 +65,25 @@ $$
 O(n^2)
 $$
 
+# 4. Quick 정렬
+
+## (1) 정의 
+
+오름차순을 Quick 정렬을 이용해 정렬시킨다고 해보자.
+
+- 기준 값인 pivot 값을 설정해서, 그 값도 큰 데이터들은 오른쪽으로, 그 값보다 작은 데이터들은 왼쪽으로 몬다. 
+  (pivot 제외 맨 왼쪽의 index를 가르키는 포인터를 i, 맨 오른쪽을 가르키는 포인터를 j라고 해보자.)
+
+  - i가 가르키는 값이 pivot 값보다 작으면 i++
+  - j가 가르키는 값이 pivot 값보다 크면 j-- 
+  - i가 가르키는 값이 pivot보다 크다면 i는 해당 자리에 멈춰있을 것이다. j도 마찬가지로 j가 가르키는 값이 pivot보다 작으면 멈춰있을 것이다. 둘 다 위의 이유로 멈춰있다면 서로 값을 바꾸고, i++, j-- 한다.
+
+  
+
+- pivot을 2개의 집단 사이의 index에 저장한다.
+
+- 각 집단별로 재귀를 이용해 또 quick 정렬을 반복한다. (더 이상 쪼개지지 않을 때까지)
+
+### (2) 예시
+
+![image-20240705230217430](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240705230217430.png)
