@@ -238,8 +238,10 @@ map.forEach((k, v) -> System.out.println(k + " : " + v));
 
 **후입선출(Last In First Out) 구조** : 맨 마지막에 들어간 놈이 제일 먼저 나온다.
 
-| ![image-20240704201726694](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704201726694.png) | ![image-20240704201741540](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704201741540.png) |
+|  ![image-20240704201726694](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/2201de41-1b4a-456a-9558-182e5fea47a3) | ![image-20240704201741540](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/ba0900f8-8ea1-402f-9d73-dedcd753c6f1) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
+
+
 
 출처: 농심, [블로그](https://hstory0208.tistory.com/entry/Java%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%83%9DStack%EA%B3%BC-%ED%81%90Queue)
 
@@ -255,7 +257,8 @@ map.forEach((k, v) -> System.out.println(k + " : " + v));
 
 ## (3) 배열로 구현
 
-![image-20240704202544020](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704202544020.png)
+![image-20240704202544020](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/8503a82d-7305-4509-b3de-816f04216ae3)
+
 
 출처: [블로그](https://imtaeheewon.tistory.com/24)
 
@@ -269,7 +272,7 @@ map.forEach((k, v) -> System.out.println(k + " : " + v));
 선입선출(First In First Out) 구조: 먼저 들어간 놈이 먼저 나온다.
 값은 꼬리(rear)로 입력되고, 입력된 순서대로 머리(Front)로 나온다. Queue에서는 값의 값이 입력되는 곳과 출력되는 곳이 정해져 있다.
 
-| ![image-20240704202931378](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704202931378.png) | ![image-20240704203038272](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704203038272.png) |
+| ![image-20240704202931378](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/90464528-9fc5-4e6c-b7f9-9e3949da0425)  | ![image-20240704203038272](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/41eb84f2-b129-45c2-9d3b-10bf4e6b7fc0)|
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 
 출처: [블로그](https://blog.naver.com/beaqon/221247518381) , [블로그](https://velog.io/@hanif/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%ED%81%90)
@@ -280,7 +283,8 @@ map.forEach((k, v) -> System.out.println(k + " : " + v));
 
 Front, rear 둘 중 어느 방향으로도 값의 삽입과 출력이 가능한 양방향 큐 
 
-![image-20240704203825784](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240704203825784.png)
+![image-20240704203825784](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/1c11ed29-58d9-4fd1-ac90-a8b48abb7283)
+
 
 ### b. 빈출 매소드
 

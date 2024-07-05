@@ -31,11 +31,13 @@ idx, idy를 이용하여, 한 칸씩 이동.
 
 # 2. 구간 합 구하기 
 
-![image-20240623215432256](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/002-simulation-skill/image-20240623215432256.png)
+![image-20240623215432256](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/96a5a0fd-fcf8-4412-a05b-5907d08b3cb9)
+
 
 만약 여기서 
 
-![image-20240623215526155](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/002-simulation-skill/image-20240623215526155.png)
+![image-20240623215526155](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/c049578f-0196-4d67-b3af-2e529902d20b)
+
 
 이걸 구한다면 원래는 for문 루프를 돌아야겠지만, 누적합 배열을 이용하면, 35 -10 한 번만 하면 된다. 이러면 시간복잡도가 O(1)이 든다. 구간합 문제의 기본은 이것이고, 이를 응용해서 문제를 풀면 된다.
 
@@ -46,19 +48,22 @@ idx, idy를 이용하여, 한 칸씩 이동.
 배열이나 리스트 내에 2개의 포인터를 두고, 그것으로 특정 값 혹은 범위를 지칭해가면서 문제를 푸는 방법
 
 -  이런 식으로 오른쪽 포인터가 움직이면, 왼쪽 포인터가 따라가면서 문제를 해결하는 유형이 있고
-  ![image-20240704200521553](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/002-simulation-skill/image-20240704200521553.png)
+![image-20240704200521553](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/f223e495-8490-487c-9138-53e93912a263)
+
 
   사진 출처: [블로그](https://butter-shower.tistory.com/226)
 
 - 아래 그림처럼 포인터 들을 양 끝에 두어서 서로 가까워지도록 하여 문제를 해결하는 경우도 있다. 
-  ![image-20240704200716306](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/002-simulation-skill/image-20240704200716306.png)
+![image-20240704200716306](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/4697371b-6e9f-4101-8cb1-32e23046f6a4)
+
 
   출처: [블로그](https://velog.io/@dmsgur7112/Algorithm-%ED%88%AC-%ED%8F%AC%EC%9D%B8%ED%84%B0-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
 
 ## (2) 슬라이딩 윈도우
 
 문틀에서 창문을 미는 것처럼, 오른쪽 포인터가 움직인 만큼 왼쪽 포인터도 움직여 포인터 내의 범위가 일관되도록하여 문제를 푸는 기술이다. 
+![image-20240704200907480](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/4ee7079a-d8a4-4622-a979-c72bdf16c379)
 
-![image-20240704200907480](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/002-simulation-skill/image-20240704200907480.png)
+
 
 출처: [블로그](https://learning-e.tistory.com/36)
