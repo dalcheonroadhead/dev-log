@@ -24,15 +24,15 @@
 
 | #    | TYPE                                                         | CONTENT                                                      | DATE       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
-| 1    | <img alt="Static Badge" src="https://img.shields.io/badge/TRANSLATION-00aaff"> | [AOP의 발상](https://github.com/dalcheonroadhead/Theory-study/blob/main/01.AOP/01_AOP_Concepts.md) | 2024-03-09 |
-| 2    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [AOP의 개념](https://github.com/dalcheonroadhead/Theory-study/blob/main/01.AOP/02_AOP_Summary.md) | 2024-03-10 |
-| 3    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [Weaving과 Proxy에 대하여](https://github.com/dalcheonroadhead/Theory-study/blob/main/01.AOP/03_ProxyAndWeaving.md) | 2024-03-11 |
+| 1    | <img alt="Static Badge" src="https://img.shields.io/badge/TRANSLATION-00aaff"> | [AOP의 발상](https://dalcheonroadhead.tistory.com/389)       | 2024-03-09 |
+| 2    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [AOP의 개념](https://dalcheonroadhead.tistory.com/387)       | 2024-03-10 |
+| 3    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [Weaving과 Proxy에 대하여](https://dalcheonroadhead.tistory.com/388) | 2024-03-11 |
 | 4    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [OAtuh2의 이론](https://dalcheonroadhead.tistory.com/381)    | 2024-03-03 |
 | 5    | <img alt="Static Badge" src="https://img.shields.io/badge/REVIEW-ff00aa"> | [시큐리티 없는 GoogleOAuth2 실습 정리]()                     | 2024-03-13 |
-| 6    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [토큰 인증 방식](https://github.com/dalcheonroadhead/Theory-study/blob/main/02.SECURITY/1.JWT/02_Token-authentication.md) | 2024-03-15 |
-| 7    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [JWT란 무엇인가?](https://github.com/dalcheonroadhead/Theory-study/blob/main/02.SECURITY/1.JWT/01_AboutJWT.md) | 2024-03-17 |
-| 8    | <img alt="Static Badge" src="https://img.shields.io/badge/REVIEW-ff00aa"> | [SSAFY 특화 프로젝트 Security 파트 리뷰](https://github.com/dalcheonroadhead/What-I-Study/blob/main/00.REVIEW/WALK_WALK/WALK_WALK_SECURITY.md) | 2024-04-26 |
-| 9    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [개발자 유미 SecurityJWT 7강까지 듣고 정리](https://github.com/dalcheonroadhead/What-I-Study/tree/main/02.SECURITY/3.Security-with-JWT-Review) | 2024-04-27 |
+| 6    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [토큰 인증 방식](https://dalcheonroadhead.tistory.com/436)   | 2024-03-15 |
+| 7    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [JWT란 무엇인가?](https://dalcheonroadhead.tistory.com/401)  | 2024-03-17 |
+| 8    | <img alt="Static Badge" src="https://img.shields.io/badge/REVIEW-ff00aa"> | [SSAFY 특화 프로젝트 Security 파트 리뷰](https://dalcheonroadhead.tistory.com/403) | 2024-04-26 |
+| 9    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [개발자 유미 SecurityJWT 7강까지 듣고 정리](https://github.com/dalcheonroadhead/what-i-study/tree/main/01.BACK_END/02.SECURITY/3.Security-with-JWT-Review) | 2024-04-27 |
 
 ## ② CI/CD
 
