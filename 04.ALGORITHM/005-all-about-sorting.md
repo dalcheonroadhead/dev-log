@@ -104,11 +104,13 @@ $$
 - 작은 단위들을 정렬한다. 
 - 작은 단위들을 병합하여 재정렬한다. 이것을 배열 혹은 리스트 전체가 정렬될 때까지 반복한다. (정복 by 투 포인터)
 
-![image-20240706183925930](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240706183925930.png)
+![image-20240706183925930](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/09c9bc8c-8cc2-4c66-a084-7d7cba0ff94c)
+
 
 ## (2) 구현 방법
 
-![image-20240706184004969](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240706184004969.png)
+![image-20240706184004969](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/b7c855e4-c520-4805-8ea8-7a44690440aa)
+
 
 배열의 두 부분을 병합할 때를 생각해보자. 이때 포인터가 총 3개 필요하다.
 
