@@ -20,6 +20,8 @@
 
 ## 💻 What I type up
 
+## ① Backend
+
 | #    | TYPE                                                         | CONTENT                                                      | DATE       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
 | 1    | <img alt="Static Badge" src="https://img.shields.io/badge/TRANSLATION-00aaff"> | [AOP의 발상](https://github.com/dalcheonroadhead/Theory-study/blob/main/01.AOP/01_AOP_Concepts.md) | 2024-03-09 |
@@ -31,12 +33,31 @@
 | 7    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [JWT란 무엇인가?](https://github.com/dalcheonroadhead/Theory-study/blob/main/02.SECURITY/1.JWT/01_AboutJWT.md) | 2024-03-17 |
 | 8    | <img alt="Static Badge" src="https://img.shields.io/badge/REVIEW-ff00aa"> | [SSAFY 특화 프로젝트 Security 파트 리뷰](https://github.com/dalcheonroadhead/What-I-Study/blob/main/00.REVIEW/WALK_WALK/WALK_WALK_SECURITY.md) | 2024-04-26 |
 | 9    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [개발자 유미 SecurityJWT 7강까지 듣고 정리](https://github.com/dalcheonroadhead/What-I-Study/tree/main/02.SECURITY/3.Security-with-JWT-Review) | 2024-04-27 |
-| 10   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [시간 복잡도의 개념과 코딩 테스트에서의 활용법](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/001-time-complexity.md) | 2024-06-13 |
-| 11   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [배열 회전에 대하여](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/002-simulation-skill.md) | 2024-06-14 |
-| 12   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [Array, LinkedList, ArrayList, Map 자료 구조 정리](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/003-data-structure.md) | 2024-06-23 |
-| 13   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [모듈러 연산에 대하여](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/004-moduler-arithmetic.md) | 2024-06-23 |
-| 14   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [구간 합에 대하여](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/002-simulation-skill.md) | 2024-06-23 |
-| 15   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [정렬의 모든 것](https://dalcheonroadhead.tistory.com/428)   | 2024-07-02 |
+
+## ② CI/CD
+
+| #    | TYPE | CONTENT | DATE |
+| ---- | ---- | ------- | ---- |
+| 🚧    | 🚧    | 🚧       | 🚧    |
 
 
+
+## ③ Frontend
+
+| #    | TYPE | CONTENT | DATE |
+| ---- | ---- | ------- | ---- |
+| 🚧    | 🚧    | 🚧       | 🚧    |
+
+
+
+## ④ Algorithm
+
+| #    | TYPE                                                         | CONTENT                                                      | DATE       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
+| 1    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [시간 복잡도의 개념과 코딩 테스트에서의 활용법](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/001-time-complexity.md) | 2024-06-13 |
+| 2    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [배열 회전에 대하여](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/002-simulation-skill.md) | 2024-06-14 |
+| 3    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [Array, LinkedList, ArrayList, Map 자료 구조 정리](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/003-data-structure.md) | 2024-06-23 |
+| 4    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [모듈러 연산에 대하여](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/004-moduler-arithmetic.md) | 2024-06-23 |
+| 5    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [구간 합에 대하여](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/002-simulation-skill.md) | 2024-06-23 |
+| 6    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [정렬의 모든 것](https://dalcheonroadhead.tistory.com/428)   | 2024-07-02 |
 
