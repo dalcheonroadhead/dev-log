@@ -127,3 +127,50 @@ $$
 
 
 
+# 6. 기수 정렬
+
+## (1) 정의 
+
+주어진 입력값의 자릿수를 비교하여 값을 정렬하는 방법. 
+
+### a. 장점
+
+정렬들 중에서 가장 성능이 빠르다. O(n)
+
+### b. 단점
+
+- 성능이 빠른 만큼, 많은 량의 메모리를 차지한다. Queue가 10개 (음수 값이 있을 때는 10개 더 필요) 혹은 Bucket 배열을 따로 써야한다. 또한 10개의 Queue에 정렬된 수를 넣었다 빼내는 과정에서 추가적인 메모리 소요가 크다. 
+- 양의 정수와 음의 정수로 데이터의 종류가 양분화 되었다면, 양의 정수는 양의 정수끼리 따로 모아서 처리, 음의 정수는 음의 정수끼리 따로 모아서 처리해야 한다. (안 그러면 정렬이 안된다.)
+
+## (2) 구현 방법
+
+### 세팅 
+
+Queue 10개를 준비한다. 혹은 그에 상응하는 bucket 배열을 준비한다. (bucket 배열 사용법은 수 정렬하기 3 정리에 보면 있다.)
+각 Queue는 0 ~ 9 사이의 숫자를 대변한다.
+
+다음은 입력으로 주어진 배열이다.
+
+![image-20240707152254280](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152254280.png)
+
+- 먼저 1의 자릿수를 기준으로 자신이 해당하는 번호의 queue에 집어넣는다.
+  ![image-20240707152236029](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152236029.png)
+
+- 0번째 queue부터 9번째 queue까지 차례대로 값을 원래의 배열에 저장시킨다.
+  ![image-20240707152359830](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152359830.png)
+- 이번에는 10의 자릿수를 토대로 다시 집어넣는다. (순서는 배열의 0번부터 차례대로!)
+  ![image-20240707152447464](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152447464.png)
+
+- 다시 넣은 값들을 0번 queue부터 순서대로 빼서 원본 배열에 집어넣는다. 
+
+  ![image-20240707152521969](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152521969.png)
+
+- 이번에는 마지막인 100의 자릿수를 토대로 다시 queue에 집어넣는다. 
+  ![image-20240707152556376](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152556376.png)
+
+- 마지막으로 원본 배열에 넣는다. 해당 값들이 정렬된 것을 볼 수 있다. 
+
+  ![image-20240707152621037](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152621037.png)
+
+사진 출처: [javapoint.com](https://www.javatpoint.com/radix-sort)
+
