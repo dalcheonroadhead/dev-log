@@ -329,3 +329,84 @@ PriorityQueue<Student> pQ = new ProrityQueue<Student>((o1,o2) -> Integer.compare
 
 ```
 
+# 6. 그래프를 자료구조로 나타내보자! 
+
+## (0) 그래프란? 
+
+### a. 정의
+
+값을 담고 있는 정점(Vertex)와 그 정점들을 잇는 간선(Edge)으로 이루어져 있는 자료구조
+
+ ![image](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image.png)
+
+
+
+### b. 그래프 관련 용어 
+
+| 용어                 | 뜻                                                           |
+| -------------------- | ------------------------------------------------------------ |
+| 정점(Vertex or Node) | 데이터를 저장하는 곳                                         |
+| 간선(Edge)           | 정점과 정점을 잇는 선                                        |
+| 인접하다.            | 정점 A와 B가 간선으로 이어져 있으면, 정점 A와  B는 서로 `인접하다.`라고 한다. <br /><br /> 인접 정점:  하나의 정점 A와 간선으로 이어져 있는 정점들을 `인접정점`이라고 한다. 위의 예시에서 B는 A의 인접정점이다. |
+| 차수                 | 하나의 정점 A와 연결된 간선의 개수이다. a의 예시에서 정점2의 차수는 3이고 정점4의 차수는 4이다. <br />진입 차수: 방향이 있는 그래프에서 외부로부터 들어오는 간선의 개수를 말한다. <br />진출 차수: 방향이 있는 그래프에서 외부로 뻗어나가는 간선의 개수를 말한다. |
+
+### c. 그래프의 종류
+
+ 무방향 그래프: 간선에 방향이 없는 그래프 
+![image-20240709212843476](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240709212843476.png)
+
+방향 그래프: 간선에 방향이 있는 그래프
+![image-20240709213011057](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240709213011057.png)
+
+가중치 그래프: 간선에 가중치가 있는 그래프  
+![image-20240709213030092](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240709213030092.png)
+
+완전 그래프: 모든 정점이 서로 연결된 그래프 
+
+![image-20240709213048101](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240709213048101.png)
+
+사진 출처: [블로그](https://80000coding.oopy.io/125156cf-79bb-48da-82ae-1f2ee7896bb8)
+
+## (1) 인접 행렬 
+
+출발정점의 번호를 행, 도착정점의 번호를 열에 저장하여 그래프의 간선을 `2차원 배열`로 나타내는 방법을 말한다. 
+
+![image-20240709213616350](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240709213616350.png)
+
+**가중치가 없는 그래프를 인접 행렬로 구현**
+: 위의 그림과 같이 1을 저장하여 두 정점 사이에 간선이 있음을 기록한다. 
+
+**가중치가 있는그래프를 인접 행렬로 구현**
+: `[출발 정점] [도착 정점] = 가중치` 형태로 인접행렬의 값으로 가중치를 저장한다. 
+
+
+
+**인접 행렬로 구현해서 문제를 풀었을 때 문제점**
+
+: 간선의 개수가 적은 경우 메모리 낭비가 심하다. -> 인접 리스트의 경우 간선이 있는 경우에만 표현하기 때문에 대부분 문제에서는 인접 리스트를 사용한다.
+
+출처: [블로그](https://ralpioxxcs.github.io/cs/graph_matrix/)
+
+## (2) 인접 리스트 
+
+**a. 가중치가 없는 그래프의 인접 리스트**
+
+```java
+ArrayList<Integer> [] lists = new ArrayList [N];
+
+lists["출발정점"].add("도착정점");
+```
+
+Integer형 ArrayList 배열을 만든다. 
+원소 하나 하나가 출발정점을 의미하고 원소 안의 List의 값들은 출발 정점에서 갈 수 있는 정점들이 저장되어 있다.
+
+**b. 가중치가 있는 그래프의 인접 리스트**
+
+```java
+ArrayList<int[]> lists = new ArrayList [N];
+
+lists["출발 정점"].add(new int[]{"도착 정점", "가중치"});
+```
+
+ArrayList의 자료형을 int[] 로 바꿔서 가중치 또한 저장할 수 있도록 바꾼다. 배열 대신 도착정점과 가중치를 담은 Class를 이용하여 문제를 풀어도 된다.
+
