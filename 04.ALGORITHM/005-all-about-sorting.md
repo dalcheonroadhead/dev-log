@@ -151,26 +151,30 @@ Queue 10개를 준비한다. 혹은 그에 상응하는 bucket 배열을 준비�
 
 다음은 입력으로 주어진 배열이다.
 
-![image-20240707152254280](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152254280.png)
+![image-20240707152254280](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/f0938321-e9a8-42cf-9831-503470b5cc3c)
+
 
 - 먼저 1의 자릿수를 기준으로 자신이 해당하는 번호의 queue에 집어넣는다.
-  ![image-20240707152236029](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152236029.png)
+  ![image-20240707152236029](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/2f95903f-732e-4cb2-b87b-65b3be4ffda2)
+
 
 - 0번째 queue부터 9번째 queue까지 차례대로 값을 원래의 배열에 저장시킨다.
-  ![image-20240707152359830](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152359830.png)
+  ![image-20240707152359830](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/5e864122-7d3e-40d8-9f71-80897aeae390)
+
 - 이번에는 10의 자릿수를 토대로 다시 집어넣는다. (순서는 배열의 0번부터 차례대로!)
-  ![image-20240707152447464](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152447464.png)
+  ![image-20240707152447464](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/38604538-210f-4138-aefd-7da53d30cb2a)
+
 
 - 다시 넣은 값들을 0번 queue부터 순서대로 빼서 원본 배열에 집어넣는다. 
-
-  ![image-20240707152521969](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152521969.png)
+  ![image-20240707152521969](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/145d42ca-cc54-4958-9df3-93dec9734cda)
 
 - 이번에는 마지막인 100의 자릿수를 토대로 다시 queue에 집어넣는다. 
-  ![image-20240707152556376](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152556376.png)
+  ![image-20240707152556376](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/168390c5-64f0-4762-9862-7e39c2de6f45)
+
 
 - 마지막으로 원본 배열에 넣는다. 해당 값들이 정렬된 것을 볼 수 있다. 
+  ![image-20240707152621037](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/030de674-146b-48a9-bb61-24478d58ac41)
 
-  ![image-20240707152621037](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/005-all-about-sorting/image-20240707152621037.png)
-
+  
 사진 출처: [javapoint.com](https://www.javatpoint.com/radix-sort)
 
