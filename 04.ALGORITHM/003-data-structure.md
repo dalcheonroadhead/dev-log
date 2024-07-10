@@ -336,10 +336,7 @@ PriorityQueue<Student> pQ = new ProrityQueue<Student>((o1,o2) -> Integer.compare
 ### a. 정의
 
 값을 담고 있는 정점(Vertex)와 그 정점들을 잇는 간선(Edge)으로 이루어져 있는 자료구조
-
- ![image](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image.png)
-
-
+![image-20240709212843476](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/cc0bdf0b-9b3c-44c9-80f0-287dfd185a0f)
 
 ### b. 그래프 관련 용어 
 
@@ -353,17 +350,19 @@ PriorityQueue<Student> pQ = new ProrityQueue<Student>((o1,o2) -> Integer.compare
 ### c. 그래프의 종류
 
  무방향 그래프: 간선에 방향이 없는 그래프 
-![image-20240709212843476](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240709212843476.png)
+![image-20240709212843476](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/f3e5d7f4-e055-42d4-9227-1488b525dbb3)
+
 
 방향 그래프: 간선에 방향이 있는 그래프
-![image-20240709213011057](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240709213011057.png)
+![image-20240709213011057](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/10cfd160-8dc1-4e15-b2d5-a0e7233e867c)
 
 가중치 그래프: 간선에 가중치가 있는 그래프  
-![image-20240709213030092](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240709213030092.png)
+![image-20240709213030092](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/77ea4c52-e7e5-41cd-b774-b1f02dd2016b)
+
 
 완전 그래프: 모든 정점이 서로 연결된 그래프 
+![image-20240709213048101](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/866b87dc-e412-42f0-83c7-3a009ff83a1e)
 
-![image-20240709213048101](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240709213048101.png)
 
 사진 출처: [블로그](https://80000coding.oopy.io/125156cf-79bb-48da-82ae-1f2ee7896bb8)
 
@@ -371,7 +370,8 @@ PriorityQueue<Student> pQ = new ProrityQueue<Student>((o1,o2) -> Integer.compare
 
 출발정점의 번호를 행, 도착정점의 번호를 열에 저장하여 그래프의 간선을 `2차원 배열`로 나타내는 방법을 말한다. 
 
-![image-20240709213616350](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/003-data-structure/image-20240709213616350.png)
+![image-20240709213616350](https://github.com/dalcheonroadhead/what-i-study/assets/102154788/81d6e5fa-12a5-4d00-8b0a-45ca8d07b77c)
+
 
 **가중치가 없는 그래프를 인접 행렬로 구현**
 : 위의 그림과 같이 1을 저장하여 두 정점 사이에 간선이 있음을 기록한다. 
