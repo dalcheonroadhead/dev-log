@@ -56,8 +56,11 @@
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
 | 1    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [시간 복잡도의 개념과 코딩 테스트에서의 활용법](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/001-time-complexity.md) | 2024-06-13 |
 | 2    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [배열 회전에 대하여](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/002-simulation-skill.md) | 2024-06-14 |
-| 3    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [Array, LinkedList, ArrayList, Map 자료 구조 정리](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/003-data-structure.md) | 2024-06-23 |
+| 3    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [자료구조 정리 - Array, LinkedList, ArrayList, Map, Stack, Queue, Priority Queue](https://dalcheonroadhead.tistory.com/425) | 2024-06-23 |
 | 4    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [모듈러 연산에 대하여](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/004-moduler-arithmetic.md) | 2024-06-23 |
 | 5    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [구간 합에 대하여](https://github.com/dalcheonroadhead/what-i-study/blob/main/04.ALGORITHM/002-simulation-skill.md) | 2024-06-23 |
 | 6    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [정렬의 모든 것](https://dalcheonroadhead.tistory.com/428)   | 2024-07-02 |
+| 7    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [소수 판별법 - 낱개의 숫자에 대하여, 에라토스테네스의 체](https://dalcheonroadhead.tistory.com/438) | 2024-07-11 |
+| 8    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [DFS와 BFS](https://dalcheonroadhead.tistory.com/441)        | 2024-07-12 |
+| 9    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [그래프를 자료구조로 나타내보자 - 인접행렬, 인접 리스트](https://dalcheonroadhead.tistory.com/442) | 2024-07-12 |
 
