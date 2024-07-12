@@ -17,6 +17,7 @@ $$
 O(V+E)
 $$
 
+DFS 한번에 대한 복잡도이다. 이를 모든 정점에서 반복할 경우, O(n^2)가 된다.
 V: 정점, E: 간선
 
 ## (3) 구현 방법
@@ -46,3 +47,59 @@ V: 정점, E: 간선
        }
    }
    ```
+
+ # 2. BFS(너비 우선 탐색)
+
+## (1) 정의
+
+그래프 완전 탐색 기법 중 하나
+시작 노드와 가까운 노드부터 우선 탐색하며 모든 노드를 탐색하는 방법이다. 
+
+![image-20240712161508652](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/006-DFS-BFS/image-20240712161508652.png)
+
+DFS와 비교해보면 차이가 명확히 느껴진다.
+BFS는 시작 노드인 0에서 제일 가까운 1,2,3 먼저 탐색한 후, 제일 먼저 탐색했던 1의 근접 노드부터 다시 너비 탐색을 이어나간다. 
+반면 DFS는 제일 먼저 만난 분기인 1의 자식 노드들부터 먼저 탐색한 후, 다음 분기인 2로 넘어간다. 
+
+**★ 특징**
+
+BFS는 시작 노드에서 가장 가까운 노드 계층부터 우선 탐색하기 때문에, 시작 노드(A)에서 특정노드(B)까지 최단 경로로 도달하는 것을 보장한다. 
+
+## (2) 시간 복잡도
+
+$$
+O(V+E)
+$$
+
+BFS 한번에 대한 복잡도이다. 이를 모든 정점에서 반복할 경우, O(n^2)가 된다.
+V: 정점, E: 간선
+
+## (3) 구현 방법
+
+제일 가까운 정점을 바로 탐색한다. 이는 선입선출의 Queue로 구현할 수 있다. 
+DFS와 마찬가지로, 방문했던 정점은 방문하지 않기 위해, 방문 배열을 필요로 한다.
+
+```java
+// 그래프는 인접리스트로 구현...
+ArrayList<Integer> [] lists = new ArrayList [N];
+// 입력 넣기... (생략 - 인접리스트로 그래프 구현 보고 오세요!)
+
+ArrayDeque<Integer> aq1 = new ArrayDeque<>();
+boolean [] isVisited = new boolean[N];
+
+aq1.add("시작 정점");
+
+while(!aq1.isEmpty()){
+    // 현재 방문한 정점 꺼내기
+    int now = aq1.poll();
+    // 현 정점과 근접한 정점들 중 미방문 정점은 queue에 넣기 -> queue에 넣는 순간 방문 예정이므로, 방문 처리하기! 
+    for(int i = 0; i <= lists[now].size(); i++){
+        int next = lists[now].get(i);
+        if(!isVisited[next]){
+            isVisited[next] = true;
+            aq1.add(next);
+        }
+    }
+}
+```
+
