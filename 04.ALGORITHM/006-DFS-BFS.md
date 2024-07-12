@@ -55,7 +55,8 @@ V: 정점, E: 간선
 그래프 완전 탐색 기법 중 하나
 시작 노드와 가까운 노드부터 우선 탐색하며 모든 노드를 탐색하는 방법이다. 
 
-![image-20240712161508652](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/006-DFS-BFS/image-20240712161508652.png)
+![image](https://github.com/user-attachments/assets/d5b2ba9f-2f29-4e32-afb9-4481a60db2a4)
+
 
 DFS와 비교해보면 차이가 명확히 느껴진다.
 BFS는 시작 노드인 0에서 제일 가까운 1,2,3 먼저 탐색한 후, 제일 먼저 탐색했던 1의 근접 노드부터 다시 너비 탐색을 이어나간다. 
