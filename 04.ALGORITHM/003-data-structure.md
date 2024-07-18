@@ -143,7 +143,11 @@ Key를 락커룸 키, value를 락커룸 속에 저장된 물건이라 생각하
 - 값 삭제, 추가, 특히 조회의 속도가 빠르다. 
 - key 값은 중복될 수 없다. (value를 꺼내기 위해서 유일무이 해야한다.) 반면 value는 key값만 다르다면, 중복 가능하다.
 
-## (3) 많이 쓰는 함수
+## (3) 시간 복잡도
+
+일반적으로 hashMap은 삽입, 삭제, 조회에 `O(1)`의 시간이 든다. 다만 용량이 방대해져서 hash 충돌이 나면 O(n)이 들수도 있다고 한다. 하지만 코딩 테스트를 풀 때는, hash 충돌이 날 만큼 메모리를 소진하지는 않을 것이라 O(1)이라 생각해도 되겠다.
+
+## (4) 많이 쓰는 함수
 
 ⓐ void **putAll**(Map<? extends K, ? extends V> m) : Map m의 데이터를 전부 저장합니다.
 ⓑ V **putIfAbsent**(K key, V value) : 기존 데이터에 key가 없으면  key와 value를 저장합니다. 
@@ -211,7 +215,7 @@ System.out.println(value);
  System.out.println(str_null); 	// null 출력
  ```
 
-ⓙ foreach(): map의 key와 value 쌍을 하나씩 꺼내서 작업할 수 있게 해주는 함수
+ⓙ **foreach()**: map의 key와 value 쌍을 하나씩 꺼내서 작업할 수 있게 해주는 함수
 ```java
 // 사용 예시 
 Map<String, String> map = new HashMap<>();
@@ -230,9 +234,37 @@ map.forEach((k, v) -> System.out.println(k + " : " + v));
  */
 ```
 
+**ⓚ map.remove(Key key)** : key에 해당하는 <key,value> 쌍을 삭제  
 
+# 5. TreeMap
 
-# 4. Stack
+## (1) 정의 
+
+Red-black Tree를 이용하여 구현한  `Key 값을 기준으로` 정렬되는 Map이다. 
+정렬 기준은 default로 오름차순이고, 매개변수로 Comparator를 넣으면, 개발자 입맛에 따라 바꿀 수 있다. 
+
+```java
+TreeMap<Student, Integer> map = new TreeMap<>((o1,o2) -> (return o1.score - o2.score));
+```
+
+<details>   <summary>Red-black Tree 란? </summary> 이진탐색을 보완하여 성능을 개선한 Tree 자료 구조이다. 이진탐색은 일반적으로 O(logN)의 시간복잡도를 가지지만, 데이터가 한쪽으로 치우쳐서, 일자형 Tree가 나올 경우(ex- 계속 작은 값의 데이터만 입력 등) O(n)이라는 시간복잡도가 든다. 이에 비해 Red-black Tree는 부모노드를 기준으로 큰 값은 오른쪽, 작은 값은 외쪽으로 두어, 이상적인 이진트리 모양 형성을 유도한다. 따라서 Red-Black Tree는 삽입, 삭제, 조회 모두에서 O(logN)이라는 시간복잡도를 가진다.  </details>
+
+## (2) 시간 복잡도 
+
+TreeMap은 Red-black Tree로 구현되어서 삽입, 삭제, 조회 모두에서 `O(logN)`을 보장한다. O(1)인 hashMap보다는 느리지만, 정렬된 map이 필요한 경우에 효율적이다.
+
+## (3) 빈출 매소드
+
+| #    | 이름                  | 설명                                                         |
+| ---- | --------------------- | ------------------------------------------------------------ |
+| 1    | map.firstKey()        | 정렬 했을 때, 제일 작은 key를 반환                           |
+| 2    | map.lastKey()         | 정렬 했을 때, 제일 큰 key를 반환                             |
+| 3    | map.ceilingKey(K key) | 매개변수로 넣은 key보다 크거나 같으면서 제일 근접한 값을 반환 |
+| 4    | map.lowerKey(K key)   | 매개 변수로 넣은 key보다 작거나 같으면서 제일 근접한 값을 반환 |
+| 5    | map.pollFirstEntry()  | 정렬 했을 때, 제일 작은 key의 EntrySet()을 map에서 삭제 및 반환 |
+| 6    | map.pollLastEntry()   | 정렬 했을 떄, 제일 큰 key의 EntrySet()을 map에서 삭제 및 반환 |
+
+# 6. Stack
 
 ## (1) 정의 
 
@@ -265,7 +297,7 @@ map.forEach((k, v) -> System.out.println(k + " : " + v));
 사진 처럼 Top이란 포인터를 두어서 Push, Pop 이벤트 발생 시 Top 포인터를 올리거나 내린다.
 주의점: 배열은 크기가 고정되어 있기 때문에 배열로 Stack 구현 시 이 점을 유의해야 한다.
 
-# 5. Queue 
+# 7. Queue 
 
 ## (1) 정의 
 
@@ -329,7 +361,7 @@ PriorityQueue<Student> pQ = new ProrityQueue<Student>((o1,o2) -> Integer.compare
 
 ```
 
-# 6. 그래프를 자료구조로 나타내보자! 
+# 8. 그래프를 자료구조로 나타내보자! 
 
 ## (0) 그래프란? 
 
