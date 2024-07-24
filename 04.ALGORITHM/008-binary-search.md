@@ -16,7 +16,7 @@
 
 다음은 [geeksforgeeks](https://www.geeksforgeeks.org/binary-search/)에서 보여주는 이분 탐색으로 23을 찾는 과정이다.  
 
-![image-20240724162511705](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/008-binary-search/image-20240724162511705.png)
+![image](https://github.com/user-attachments/assets/5cd0caed-418b-470d-9cc3-cb092b51afee)
 
 # 2. 시간 복잡도: `O(logN)`
 
