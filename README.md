@@ -63,4 +63,5 @@
 | 7    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [소수 판별법 - 낱개의 숫자에 대하여, 에라토스테네스의 체](https://dalcheonroadhead.tistory.com/438) | 2024-07-11 |
 | 8    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [DFS와 BFS](https://dalcheonroadhead.tistory.com/441)        | 2024-07-12 |
 | 9    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [그래프를 자료구조로 나타내보자 - 인접행렬, 인접 리스트](https://dalcheonroadhead.tistory.com/442) | 2024-07-12 |
+| 10   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [binary-search와 Upper Bound & Lower Bound]()                | 2024-07-24 |
 
