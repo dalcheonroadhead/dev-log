@@ -63,5 +63,13 @@
 | 7    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [소수 판별법 - 낱개의 숫자에 대하여, 에라토스테네스의 체](https://dalcheonroadhead.tistory.com/438) | 2024-07-11 |
 | 8    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [DFS와 BFS](https://dalcheonroadhead.tistory.com/441)        | 2024-07-12 |
 | 9    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [그래프를 자료구조로 나타내보자 - 인접행렬, 인접 리스트](https://dalcheonroadhead.tistory.com/442) | 2024-07-12 |
-| 10   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [binary-search와 Upper Bound & Lower Bound](https://dalcheonroadhead.tistory.com/454)                | 2024-07-24 |
+| 10   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [binary-search와 Upper Bound & Lower Bound](https://dalcheonroadhead.tistory.com/454) | 2024-07-24 |
+| 11   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [유클리드 호제법 증명](https://dalcheonroadhead.tistory.com/485) | 2024-09-24 |
+| 12   | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [다익스트라 알고리즘](https://dalcheonroadhead.tistory.com/492) | 2024-10-09 |
+
+### ⑤ IT 관련 제반 지식
+
+| #    | TYPE                                                         | CONTENT                                                      | DATE       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
+| 1    | <img alt="Static Badge" src="https://img.shields.io/badge/DRILLING-aa00ff"> | [코스콤이 뭐하는 곳 인가요?](https://dalcheonroadhead.tistory.com/493) | 2024-10-10 |
 
