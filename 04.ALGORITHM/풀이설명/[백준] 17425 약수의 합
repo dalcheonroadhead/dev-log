@@ -1,0 +1,88 @@
+# 1. 문제 설명 📌
+
+[문제 링크](https://www.acmicpc.net/problem/17425)
+
+`f(n)` = n이란 숫자의 약수들의 합
+`g(n)` = 1~n까지 각 숫자의 약수들의 합 즉 f(1) ~ f(n)의 합
+
+# 2. 접근 방식 🗃️
+
+`KEY WORD`: `누적 합`,  `시간 복잡도에 대한 감`
+
+- f(n)을 구한다. (1~ 1000000 까지 전체 수에 대해 구한다.)
+  - 모든 f(n) 배열을 1로 초기화 (1은 무조건 약수에 포함되므로)
+  - f(i*j) += i 
+    (i = 2 ~ 1000000까지 모두 순회, j = 1부터 1씩 증가함. 즉 `i*j` = `i의 배수를 나타냄.`)
+- g(n)은 f(n)의 누적으로 구한다.
+- 답을 출력한다.
+
+**f(i*j) = i**를 진행하면, i의 배수에는 i를 무조건 더하고 i가 1~ 1000000까지 모든 수를 순회하기 때문에 각 숫자마다 자신의 약수를 빠짐없이 더할 수 있다.  여기서 다음이 궁금할 수 있다.
+
+## 🤔 이렇게 무식하게 하면 시간 초과 안나나요? 
+
+나도 이 의문이 들었다. 하지만 다음과 같은 이유로 시간초과는 나지 않는다. 
+
+```java
+      for (int i = 2; i < MAX; i++) {
+            for (int j = 1; i*j < MAX; j++) {
+                fn[i*j] += i;
+            }
+        }
+```
+
+j는 MAX/i 번 반복한다. 따라서 50만, 33만, 25만 ... 점점 줄어든다. 조화 급수 형태이다.
+![image-20241210014101577](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/[백준] 17425 약수의 합/image-20241210014101577.png)
+
+위의 수식에서 1만 1000000으로 바뀐 것 뿐이다. 조화급수는 k가 커질수록 증가폭이 감소한다. 그리고 In(n)에 수렴한다. 따라서 위의 문제에서는 겉의 반복문은 N번 반복, 안의 반복문은 logN번 반복으로 상정해도 된다. 시간복잡도의 근사값을 구하면 
+O(N * logN)이다. 이는 10^7 ~ 10^8 사이이다. 
+
+시간초과는 나지 않는다.
+
+# 3. 코드 소개 🔎
+
+```java
+import java.io.*;
+import java.util.Arrays;
+
+public class Main {
+
+    static int MAX = 1000001;
+    
+    public static void main(String[] args) throws IOException {
+        
+        int [] fn = new int [MAX];
+        Arrays.fill(fn, 1);			// 초기값 1로 채우기
+        long [] gn = new long [MAX];
+        getFn(fn);
+        getGn(fn,gn);
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+        StringBuilder ans_list = new StringBuilder();
+        for (int t = 0; t < T; t++) {
+            ans_list.append(gn[Integer.parseInt(br.readLine())]).append("\n");
+        }
+        System.out.println(ans_list);
+    }
+
+    public static void getFn(int [] fn){
+        for (int i = 2; i < MAX; i++) {
+            for (int j = 1; i*j < MAX; j++) {	// i의 배수에는 i를 더한다. ➜ i *j라는 수의 약수를 더하는 것
+                fn[i*j] += i;
+            }
+        }
+    }
+    public static void getGn(int [] fn, long [] gn){
+        for (int i = 1; i < gn.length; i++) {
+            gn[i] = gn[i-1] + fn[i];
+        }
+    }
+}
+```
+
+# 4. 배운 것들 🎯
+
+처음에는 에라토스테네스의 체를 활용했다. 
+소수인 값은 자기 자신과 1만 더하고, 아닌 값들은 (소수의 배수) + (N을 만들 때 파트너(곱해지는 수))로 구했다. 내가 간과한 지점은 어떤 소수의 배수 * 어떤 소수의 배수로 이루어진 약수는 계산에 넣지 않았다는 것이다. 해당 수는 소수들끼리의 조합, 배수와 소수 섞인 것, 배수끼리의 조합 등 가짓수가 많아서 특정할 수가 없었다.
+
+  어렵게 생각했다. :cry: 사실 `i의 배수에 모두 i를 더한다.`는 발상을 하지 못한 것이 문제였다. 나는 A라는 수의 영역에 들어올 값들을 일일히 구했다면, 정답 코드는 각 숫자가 자신이 있어야할 자리에 스스로 들어가도록 풀었다. 나는 모두 일일히 생각해야하게 구상해서 문제 풀이를 더 어렵게 만든 것 같다. 다음에 다시 풀어보겠다.
