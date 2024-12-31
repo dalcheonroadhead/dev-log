@@ -1,128 +1,117 @@
-# 1. 무엇에 대해 알아보나요? 🤔💭
+# 0. 알아볼 것
 
-이번에 알아볼 내용은 **Hash 형태의 자료 구조**에서 (ex - HashMap, HashSet 등) **저장된 자료간의 동등성을 어떻게 비교하는지**와 이것을 우리의 프로젝트나 알고리즘 풀이에 맞게 **재정의 하는 방법**에 대해 알아보겠다. 
+![image-20241231135521574](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/011-Hash Equality/image-20241231135521574.png)
 
-# 2. 왜 이걸 알아야 하죠? 🤷🏻‍♂️
+# 1. Hash Map 이란?
 
-물론 HashMap의 key나 HashSet의 값으로 원시자료형만을 사용한다면, 해당 내용을 알아볼 필요가 없다. 하지만 만약 HashMap의 key로 우리가 새롭게 만든 클래스의 객체를 사용해야하는 순간이 온다면 해당 내용을 아는 것이 극히 도움이 되고, 문제 해결 시야를 넓혀준다. 
-왜냐하면 개발자가 재정의 해주지 않는 이상 **Hash 자료구조는 객체형 자료에 대한 동등성 비교를 하지 못하기** 때문이다. 
+`<KEY, VALUE>` 형태의 데이터 쌍으로 이루어진 자료구조
 
-## (1) 객체형 Key로는 동등성 비교가 되지 않는 이유
+KEY를 활용해 HashMap에 VALUE을 저장, 삭제, 조회 하는데 평균 `O(1)`의 시간이 든다.
 
-**결론: 객체와 같은 `참조형 변수`간의 동등성을 비교할 경우, Hash 자료구조는 기본적으로 메모리 주소를 이용해 비교한다.  이는 개발자가 원하는 `의미적으로 같은 객체를 동일하다 판단하기`라는 조건을 만족시키지 못한다.**
+<KEY, VALUE> 쌍을 `ENTRY`라고 부른다.
 
-해당 글에서는 `HashMap`을 기준으로 내용을 설명하겠지만, HashSet과 같은 다른 Hash 자료구조에 통용되는 내용이다. 
+KEY 값은 중복될 수 없고, VALUE 값은 KEY 값이 다르다면 중복저장이 가능하다.
 
-### ※ HashMap에서 Key 값에 해당하는 value를 꺼내는 과정 
+# 2. HashMap 내부 구조
 
-HashMap의 key-value Entry는 모두 `Hash Bucket` 이라는 저장소에 분류되어 저장된다. 여기서 분류되는 기준은 `HashCode`이다. 즉, 같은 hashCode를 가진 Key들은 같은 hash Bucket에 저장된다. 
+![image-20241231140104752](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/011-Hash Equality/image-20241231140104752.png)
 
-![image-20241018180910569](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/011-Hash Equality/image-20241018180910569.png)
+HashMap은 크게 `HASH 함수`와 `Hash Bucket`으로 이루어져 있다. 
 
-a. map.get(Key)를 하면 HashMap은 인수로 들어온 Key의 `HashCode`를 확인하고, 그 hashCode가 속한 Bucket을 조회한다.
+- **Hash Bucket**은 값을 저장하는 장소로 Array로 구현되어 있다. 
+- **Hash 함수**는 자료구조에 저장될 입력 값 마다의 `Hash 값`을 반환한다. 해당 Hash 값은 **Hash Bucket의 Index**이다. 따라서 Hash 함수는 입력 값이 저장될 위치를 알려주는 **방향키 역할**을 한다고 생각하면 되겠다.
 
-![image-20241018180949098](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/011-Hash Equality/image-20241018180949098.png)
+이제 실제 입력값이 들어왔다고 해보자.
 
-b. 만약 bucket안의 값이 2개 이상이면, Key.equals()를 이용하여 인수 Key와 `동등`한 Key값이 있는지 찾는다. 
+# 3. Put의 작동원리
 
-![image-20241018181032913](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/011-Hash Equality/image-20241018181032913.png)
+![image-20241231140615504](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/011-Hash Equality/image-20241231140615504.png)
 
-c. 만약 인수와 동등한 Key가 없다면 Null을 출력하고, 있다면 해당 key의 value를 반환한다.
+### a. Hash 함수로 Entry가 저장될 위치 찾기 
 
-### ※ 동등성 비교 안되는 이유 
+**Hash함수**에는 뭐가 들어갈까? 위에서 살펴본 HashMap의 정의를 보면 항상 KEY를 활용해, VALUE에 관한 조치를 하였다. 마찬가지로, 값이 저장될 위치를 찾는 것도 **KEY를 활용**한다. 그렇다면 Hash 함수에 바로 KEY를 입력으로 넣으면 될까? 아니다. Hash 함수에 입력값은 `hashCode`만 가능하다. 따라서 **KEY를 Hash Code로 변환하는 작업**이 전처리로 필요하다.
 
-위의 1,2,3 과정을 보면 `(1) hashCode를 활용해 크게 한 번 걸러내기`, `(2) equals()를 활용해 정밀하게 같은 값 찾기`의 순으로 진행되는 것을 알 수 있다. 
- 이를 위해서 1차로 Key 값의 hashCode()를 먼저 활용하고 그 후 equals()를 활용한다. 원시 자료형이면 이 둘 다 성공적으로 이루어지지만, `Key로 참조형을 활용했다면`, hashCode는 객체의 `메모리 주소`로 만들어지고, equals()는 비교되는 두 대상이 참조하는  메모리 주소가 같은지로 동등성을 비교하기 때문에, Key마다 메모리 주소가 모두 달라 `동등성 비교 자체가 되지 않는다.` 
- 따라서 멤버 변수가 같아서 의미적으로 같은 객체 A,B가 있고 이 둘을 HashMap의 Key로 사용한다면 Key는 A 따로 B 따로 만들어지고 관리되지, 서로 Value 값을 공유하며 갱신하지는 않는다는 소리이다. 이러면 메모리 주소를 따로 저장하여 두지 않는다면 객체 값을 가진 Hash 자료 구조는 활용하지 못한다는 결론이 나온다.
+![image-20241231141417141](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/011-Hash Equality/image-20241231141417141.png)
 
-## (2) equals()와 hashCode()의 관계
+이를 가능하게 해주는 함수가 HashMap의 내부 함수인 **hashcode()**이다. 해당 함수는 재정의 하지 않으면 **KEY값의 주소값**을 입력으로 받아, 내부 계산을 거쳐 정수로 변환시킨다. 
+(HashMAP의 KEY, VALUE는 참조 자료형만 쓸 수 있기 때문에, 주소값이 무조건 있음) 
 
-아까 위에서 설명했듯이 `(1) hashCode를 활용해 크게 한 번 걸러내기`, `(2) equals()를 활용해 정밀하게 같은 값 찾기` 과정으로 간다. 
-이 말 뜻은, 
+이제 hashcode() 함수의 반환값들은 Hash 함수를 거쳐, 해당 입력값이 저장될 bucket의 index(hash 값)로 변환될 것이다. 
 
-![image-20241018182417255](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/011-Hash Equality/image-20241018182417255.png)
+### b. Hash 값이 일치하는 Hash Bucket에 값 저장
 
-1. equals()가 true인 두 Key A,B는 무조건 같은 HashCode를 가진다.
-2. 두 Key C,D가 같은 hashCode를 가진다고 해서 무조건 동등한 객체는 아니다! 
+![image-20241231141726591](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/011-Hash Equality/image-20241231141726591.png)
 
-가 성립된다. 
+만약 **서로 다른 입력값이 같은 Hash 값을 반환하는 경우** Bucket에 어떻게 저장할 것인가? 위에서 살펴봤다시피, Hash Bucket은 Array로 구현되어 있어, 값을 하나밖에 저장하지 못한다. 이렇게, 서로 다른 Entry값이 동일한 Hash 값을 반환하는 경우를 **`HASH 충돌`**이라고 한다. Hash 충돌을 다루는 방법에는 2가지가 있다.
 
-# 3. 어떻게 동등성을 맞춰주죠? 🎯
+- **방법 1. Open Addressing**: 해시 충돌 발생시 해시값 새로 구해서 해시 충돌을 우회
+- **방법 2. Separate Chaining**: 해시 충돌 발생 시 HashBucket의 Value 부분을 **Linked List** 형태로 변환시켜, 동일한 해시값을 갖는 입력값은 동일한 Bucket index에 모두 저장
 
-먼저 `동일하다`와 `동등하다`의 차이를 구분할 필요가 있을 것 같다. 일상생활에서도 두 용어는 비슷한 부류이지만 다른 의미로 사용된다. 
-먼저 `동일하다`는 `두 물체 A,B가 완전히 같다.`를 의미한다. 이를 코딩에 대입해보면, `두 객체 혹은 변수가 동일한 메모리 주소를 가진다.` 로 풀이할 수 있다. 둘은 아예 같은 것이란 뜻이다. A,B가 동일한 객체라면  `==`으로 비교해도 true가 나온다.
+java에서는 방법2를 활용하고 있다. java8 이후 부터는 LinkedList 길이가 특정 임계값을 초과하면 이진트리로 변환하여, 해시값이 중복된 데이터들 사이에서 원하는 값을 찾아내는 시간을 O(n)에서 O(logN)으로 단축시켰다. 
 
-`동등하다`는 `두 물체 A,B가 같은 자격을 가지고 있다.`를 뜻한다. 이를 코딩에 대입해보면 `두 객체가 다른 메모리 주소를 가지더라도 내용물은 완전히 같다.`를 의미한다. A,B가 동등한 객체라면 `==`으로 비교 시 false가 나오겠지만, 내용물만 비교할 경우 (ex- String의 equals()) true가 나온다. 
+따라서 예시가 만약 다음 그림처럼 해시 충돌이 났다면 Value 부분이 Linked List로 변환되어 같은 위치에 값들이 저장될 것이다.
 
-## (1) 우리가 동등하다고 생각하는 기준
+![image-20241231142546061](../../../../Documents/GitHub/dalcheonroadhead-github-blog/dalcheonroadhead.github.io/images/011-Hash Equality/image-20241231142546061.png)
 
-우리가 생각하는 `두 객체 A,B가 같다`의 의미도 A,B가 동일하다의 의미가 아닌 `두 객체 A,B가 동등하다`의 의미로 쓰인다. 
-메모리 주소는 다르더라도, 내용물은 같다는 것이다. 
+# 4. GET의 작동원리
 
-## (2) hashCode 맞추기
+이제는 KEY값을 통해 그에 대응되는 VALUE 값을 어떻게 찾아내는지 알아보자. 
 
-equals()로 두 객체 A,B의 동등성을 판단하려면 먼저 `두 객체 A,B가 같은 Bucket에 존재한다.`가 성립하여야한다. 왜냐하면,  Hash 자료구조는 내부적으로 동등성을 판단하기 전에 hashcode 일치 여부로 동등성 판단 대상을 대거 걸러내기 때문이다. (이것이 Hash 자료구조가 조회에 빠른 이유이기도 하다.)
+### a. KEY 값을 Hash 값으로 바꾸기
 
-따라서 아무리 A.equals(B) == true라고 하더라도 A와 B의 hashCode가 달라버리면 말짱 도루묵이다. 
-따라서 객체의 hashCode를 만드는 `hashCode()`라는 함수를 `객체의 내용물이 같으면 같은 hash bucket`에 포함되도록 재정의 해줘야 한다. 재정의 예시는 다음과 같다. 
+PUT에서와 마찬가지로 `hashcode()`를 활용해 Key ➜ hashcode로 변환하고, 다시 해시함수를 활용해 hashcode ➜ hash 값으로 변환한다.
+
+### b. Hash Bucket에서 hash 값에 대응하는 value 얻기
+
+해시값은 Hash Bucket의 index임으로, 그에 대응하는 value를 찾아내서 반환하면 된다. 하지만 Hash 충돌이 일어난 경우라면 어떻게 할 것인가? 이때는 HashMap 내부의 **equals()** 함수를 활용한다. equals를 통해 입력으로 들어온 KEY 값과 BUCKET에 저장된 데이터 쌍 중 KEY 값 간의 동등성을 비교하는 것이다.
+
+만약 equals()에 대한 재정의를 하지 않았다면, Object의 equals()를 그대로 사용하여 참조 자료형의 주소값끼리 서로 일치하는지를 확인하게 될 것이다.
+
+# 5. Custom 객체를 KEY로 사용하지 못하는 이유?
+
+> HashMap이 **의미적으로 동등한 KEY** 값을 동등하다고 인식하지 못한다.
+
+동등하다고 인식하지 못하는 이유는 PUT, GET 설명에서 다 나왔다.
+
+다시 살펴보면
+
+- **PUT을 할 때**, 값이 저장될 위치가 되는 Hash값을 만드는 재료인 `hashcode()`를 참조자료형의 주소로 만든다. 그러면 의미적으로 동등하든 말든, 모든 입력값의 HashCode가 달라질 것이다. 
+- **GET을 할 때** 동일한 Hash값에 저장된 값들 사이에서 현재 KEY와 **동등한** 값을 찾기 위해서 `equals()`를 활용한다. 하지만 비교하는 두 KEY의 주소값이 일치하는지 확인한다면, 의미적으로 동등하든 말든 모든 equals()가 false를 반환할 것이다.
+
+
+
+첫 번째 문제 때문에, 의미적으로 동등한 KEY 값이 HashMap에 중복 저장된다. 이는 HashMap 자료구조의 정의를 해친다.
+두 번째 문제 때문에, 의미적으로 동등한 KEY 값을 입력으로 받아도 원하는 VALUE를 조회하지 못하게 된다.
+
+위와 같은 이유로 **밑 빠진 독에 물 붓기**가 된다.
+
+# 6. 그래도 Custom 객체를 KEY로 사용하려면?
+
+문제가 되었던 `hashcode()`와 `equals()`를 **동등한 값은 동등하다고 인식할 수 있게** 바꿔주면 된다.
+
+일례로 우리가 HashMap에 자주 사용하는 `Wrapper Class`는 hashcode()와 equals()를 다음과 같이 재정의하고 있다. 대표적으로 `Integer Class`를 보면
 
 ```java
-Class Exam1 {
-    int x;
-    int y;
-    
-    @Override
-    public int hashcode() {
-        return Objects.hash(x,y);
+@Override
+public int hashCode() {
+    return value; // value는 Integer 객체가 저장하고 있는 int 값
+}
+```
+
+`hashcode()`는 그냥 Integer 객체에 저장된 값을 그대로 반환하도록 해서, 같은 값은 같은 Hash Bucket 위치에 저장되도록 한 것이다. 이 때문에 우리는 HashMap 사용 시 의미적으로 동등한 Key값이 중복 저장 되지 않는 것이다.
+
+```java
+@Override
+public boolean equals(Object obj) {
+    if (this == obj) {
+        return true; // 같은 객체를 참조하는 경우
     }
-}
-```
-
-위에서 쓰인 Objects.hash() 함수는 인수로 들어온 값으로 hashCode를 만든다. 인수가 같으면 당연히 같은 hashcode가 나온다. (내용물이 같으면 같은 hashcode가 나온다.)  다음은 `Objects.hash(Object... values)`의 내부인데 궁금하신 분은 참고하라.
-
-```java
-public static int hash(Object... values) {	// 인수의 개수가 정해져있기 않기에 몇개든 상관 없다.
-    return Arrays.hashCode(values);
-}
-```
-
-```java
-
-public static int hashCode(Object a[]) { // hashcode를 만드는 로직
-    if (a == null)
-        return 0;
-
-    int result = 1;
-
-    for (Object element : a)
-        result = 31 * result + (element == null ? 0 : element.hashCode());
-
-    return result;
-}
-```
-
-## (3) equals() 맞추기 
-
-이제 `내용물이 같은 값들을 모두 같은 hash Bucket에 집어넣기`까지는 성공했으므로 `내용물이 같다면 동등하다 판단하기`만 남았다. 
-동등성 판단을 위해서는 equals()를 재정의 해줘야 한다. 예시는 다음과 같다
-
-```java
-Class Exam {
-    int x;
-    int y;
-    
-    @OVerride
-    public boolean equals(Object obj) {
-        if(this == obj) return true; // 인수와 비교되는 값이 `동일`하다면 true를 바로 반환하여 불필요한 계산 줄이기
-        if(obj == null || this.getClass() != obj.getClass()) return false; // 인수가 null 이거나, 비교대상과 타입이 동일하지 않다면 false 반환 
-        Exam opponent = (Exam) obj;
-        return (this.x == opponent.x && this.y == opponent.y);
+    if (obj instanceof Integer) {
+        return value == ((Integer) obj).value; // 내부 값을 비교
     }
+    return false; // 타입이 다르거나 값이 다르면 false
 }
+
 ```
 
-# 4. 풀어보면 좋은 문제📝
-
-https://school.programmers.co.kr/learn/courses/30/lessons/340211
-
-해당문제는 위에서 배운 내용을 활용하면 십분 쉽게 풀 수 있는 문제이다. 
+`equals()`는 조금 복잡한데, 입력으로 Object 객체가 들어와서 비교하는 대상끼리 동일 타입인지 체크하는 코드가 필요해서 그렇다. 그 다음은 **의미적으로 같은지**를 체크하는 코드이다.
