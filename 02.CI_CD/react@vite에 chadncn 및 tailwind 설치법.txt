@@ -1,0 +1,10 @@
+react@vite에 chadncn 및 tailwind 설치법 
+
+1. tailwind는 일반 react에서 설치하면 안 돌아감. 이
+유: 순수 react는 react-script란 얘를 사용하여 프로젝트가 실행되는데, 이 react-script가 기본적으로 tailwindcss 3.4.17을 가지고 있음. 그래서 우리가 까려는 최신식 tailwindcss 4.0.16이 실행이 안됨.
+
+2. chadcn-ui 설치법 
+0.9.0은 tailwind 4.x 버전과 충돌이 나서 0.8.0으로 다운 그레이드 해야함. 
++ tailwind.config.js와 jsconfig.json이 있어야 함. 이게 없으면 안 깔림. 이유는 chadcn이 tailwind가 설치 되었는지를 이 두 파일의 존재 여부로 확인하기 때문임. 안의 내용물은 chatGPT한테 물어봐서 채우자.
+
+3. Ansible, TrreaForm
