@@ -1,7 +1,7 @@
 ---
 name: default
 about: 디폴트 이슈 템플릿
-title: "[LOG-동시성 제어 우선순위 정하기]"
+title: "[LOG] 동시성 제어 우선순위 정하기"
 labels: ''
 assignees: dalcheonroadhead
 
